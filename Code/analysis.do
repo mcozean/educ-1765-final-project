@@ -149,30 +149,30 @@ drop if anios_esc > 16
 * (1) First stage: years of schooling
 reg anios_esc treat months_distance, r // no covariates
 predict years_of_schooling_hat_1, xb // predict years of schooling
-reg anios_esc treat months_distance sex, r // add gender covariate
+reg anios_esc treat months_distance anio, r // add gender covariate
 predict years_of_schooling_hat_2, xb // predict years of schooling
-reg anios_esc treat months_distance sex anio, r // add survey year covariate
+reg anios_esc treat months_distance anio region, r // add survey year covariate
 predict years_of_schooling_hat_3, xb // predict years of schooling
-reg anios_esc treat months_distance sex anio region, r // add birth region covariate
+reg anios_esc treat months_distance anio region ur, r // add birth region covariate
 predict years_of_schooling_hat_4, xb // predict years of schooling
-reg anios_esc treat months_distance sex anio region ur, r // add urban status covariate
+reg anios_esc treat months_distance anio region ur sex, r // add urban status covariate
 predict years_of_schooling_hat_5, xb // predict years of schooling
 //  regression of years of schooling on treatment, running variable, all covariates
 
 * (2) Reduced-form: log of hourly wages
 reg log_ing_x_hrs treat months_distance, r // no covariates
-reg log_ing_x_hrs treat months_distance sex, r // add gender covariate
-reg log_ing_x_hrs treat months_distance sex anio, r // add survey year covariate
-reg log_ing_x_hrs treat months_distance sex anio region, r // add birth region covariate
-reg log_ing_x_hrs treat months_distance sex anio region ur, r // add urban status covariate
+reg log_ing_x_hrs treat months_distance anio, r // add gender covariate
+reg log_ing_x_hrs treat months_distance anio region, r // add survey year covariate
+reg log_ing_x_hrs treat months_distance anio region ur, r // add birth region covariate
+reg log_ing_x_hrs treat months_distance anio region ur sex, r // add urban status covariate
 //  regression of log of hourly wages on treatment, running variable, all covariates
 
 * (3) Second stage: log of hourly wages (years of schooling as an instrument)
 reg log_ing_x_hrs years_of_schooling_hat_1 months_distance, r // no covariates
-reg log_ing_x_hrs years_of_schooling_hat_2 months_distance sex, r // add gender covariate
-reg log_ing_x_hrs years_of_schooling_hat_3 months_distance sex anio, r // add survey year covariate
-reg log_ing_x_hrs years_of_schooling_hat_4 months_distance sex anio region, r // add birth region covariate
-reg log_ing_x_hrs years_of_schooling_hat_5 months_distance sex anio region ur, r // add urban status covariate
+reg log_ing_x_hrs years_of_schooling_hat_2 months_distance anio, r // add gender covariate
+reg log_ing_x_hrs years_of_schooling_hat_3 months_distance anio region, r // add survey year covariate
+reg log_ing_x_hrs years_of_schooling_hat_4 months_distance anio region ur, r // add birth region covariate
+reg log_ing_x_hrs years_of_schooling_hat_5 months_distance anio region ur sex, r // add urban status covariate
 
 *------------------------------------------------------------------------------*
 
