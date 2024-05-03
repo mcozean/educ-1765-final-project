@@ -1,7 +1,6 @@
 # EDUC 1765 Final Project
 
-#### Title: 
-- Estimating the Returns to Compulsory Schooling: Evidence from a Major Policy Reform in Mexico
+#### Estimating the Returns to Compulsory Schooling: Evidence from a Major Policy Reform in Mexico
 
 #### Code: 
 - Preprocessing: downloading and cleaning surveys for analysis
