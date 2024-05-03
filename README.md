@@ -8,8 +8,8 @@ Estimating the Returns to Compulsory Schooling: Evidence from a Major Policy Ref
 
 #### Master: 
 - Cleaned surveys: cleaned surveys from preprocessing step
-- Output: figures and tables
-- Survey panel: appended surveys for each year
+- Output: figures and tables from analysis stage
+- Survey panel: appended surveys (compressed due to file size)
 
 #### Raw: 
 - Uncleaned data (compressed due to file size)
