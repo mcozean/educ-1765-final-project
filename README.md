@@ -1,1 +1,1 @@
-# educ-1765-final-project
+# EDUC 1765 Final Project
