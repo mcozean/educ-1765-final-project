@@ -74,6 +74,11 @@ replace region = 7 if ent_1 == "Ciudad de México"
 drop ent_1 // no longer need ent_1 variable
 order region, after(anio) // reorder variables
 
+sum anio if treat // summarize survey year for treat
+sum anio if !treat // summarize survey year for control
+sum anio // summarize survey year for the full sample
+sum anio, detail // summarize survey year in detail
+
 * Generate survey year dummy variables
 replace anio = 1 if anio == 2016
 replace anio = 2 if anio == 2017
